@@ -1,0 +1,18 @@
+/* CSS Variables - The var() function. (n.d.). W3Schools. Retrieved March 13, 2023, from https://www.w3schools.com/css/css3_variables.asp */
+:root {
+    --flat-color: #9292E2;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--flat-color);
+};
+
+
+section {
+    display: flex;
+};
+
