@@ -13,4 +13,10 @@ A multiple choice code assessment
 - iCloud Drive > Documents > Wed Development > Getting Started > AC Personality Types copy
 - onclick Event. (n.d.). W3Schools. Retrieved March 13, 2023, from https://www.w3schools.com/jsref/event_onclick.asp
 - SOLVED Cannot Read Property 'addEventListener' of Null in JS. (2022, November 14). Coding Beauty. Retrieved March 13, 2023, from https://codingbeautydev.com/blog/javascript-cannot-read-property-addeventlistener-of-null/
-- Quick, J. Q. (n.d.). Build a Quiz App. YouTube. Retrieved March 13, 2023, from https://www.youtube.com/watch?v=rFWbAj40JrQ&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=
+- Quick, J. Q. (n.d.). Build a Quiz App. YouTube. Retrieved March 13, 2023, from https://www.youtube.com/watch?v=rFWbAj40JrQ&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index
+- Coyier, C. (2013, April 8). A Complete Guide to Flexbox | CSS-Tricks. CSS-Tricks. Retrieved March 14, 2023, from https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+- HTML Global class Attribute. (n.d.). W3Schools. Retrieved March 14, 2023, from https://www.w3schools.com/tags/att_global_class.asp
+- Color Picker — HTML Color Codes. (n.d.). HTML Color Codes. Retrieved March 14, 2023, from https://htmlcolorcodes.com/color-picker/
+- Office Hours 14MAR2023
+- How to align a button in the center of the div. (n.d.). Educative.io. Retrieved March 14, 2023, from https://www.educative.io/answers/how-to-align-a-button-in-the-center-of-the-div
+- Tutoring 14MAR2023

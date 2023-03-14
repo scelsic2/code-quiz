@@ -59,21 +59,49 @@ header {
     border-radius: 10px;
 }
 
-.btn:hover {
+.btn:hover, .mx-button-default:hover {
     background-color: var(--details-accent-color);
     border: var(--accent-color) inset 8px;;
 }
 
+/* quiz.html */
 .question-choice-answer-container {
     width: 50%;
     height:fit-content;
-    background-color: var(--accent-color);
+    max-width: 500px;
+    background-color: var(--fill-in-color);
     margin: auto;
     padding: 15px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .question-div {
     margin: 10px;
     margin-bottom: 30px;
+    font-size:x-large;
+    font-weight: bolder;
 }
+
+/* How to align a button in the center of the div. (n.d.). Educative.io. Retrieved March 14, 2023, from https://www.educative.io/answers/how-to-align-a-button-in-the-center-of-the-div */
+.mxChoice-div {
+    text-align: center;
+}
+
+.mx-button-default {
+    text-decoration: none;
+    background-color: var(--accent-color);
+    padding: 10px 20px;
+    font-weight: bold;
+    border: var(--details-accent-color) outset 8px;
+    margin: 5px auto;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: large;
+    display: block;
+}
+
+
+
