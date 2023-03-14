@@ -1,18 +1,79 @@
 /* CSS Variables - The var() function. (n.d.). W3Schools. Retrieved March 13, 2023, from https://www.w3schools.com/css/css3_variables.asp */
 :root {
-    --flat-color: #9292E2;
+    --flat-color: #126A6E;
+    --accent-color: #16848A;
+    --details-accent-color: #1A9EA6;
+    --fill-in-color: #1FB9C1;
 }
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0; 
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--flat-color);
-};
+    color: rgb(31, 36, 43);
+}
 
+body {
+    background-color: var(--flat-color);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 section {
     display: flex;
-};
+}
+/* Coyier, C. (2013, April 8). A Complete Guide to Flexbox | CSS-Tricks. CSS-Tricks. Retrieved March 14, 2023, from https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+header {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    background-color: var(--fill-in-color);
+}
 
+/* HTML Global class Attribute. (n.d.). W3Schools. Retrieved March 14, 2023, from https://www.w3schools.com/tags/att_global_class.asp */
+/* .function, h1, p{
+    color: black;
+} */
+
+.button-div {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    flex-direction: column;
+    border: var(--accent-color) solid 10px;
+    margin: auto;
+    padding: 30px 40px;
+    background-color: var(--fill-in-color);
+    border-radius: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: var(--accent-color);
+    padding: 10px 20px;
+    font-weight: bold;
+    border: var(--details-accent-color) outset 8px;
+    margin: 10px auto;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: var(--details-accent-color);
+    border: var(--accent-color) inset 8px;;
+}
+
+.question-choice-answer-container {
+    width: 50%;
+    height:fit-content;
+    background-color: var(--accent-color);
+    margin: auto;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.question-div {
+    margin: 10px;
+    margin-bottom: 30px;
+}
