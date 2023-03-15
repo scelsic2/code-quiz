@@ -20,3 +20,5 @@ A multiple choice code assessment
 - Office Hours 14MAR2023
 - How to align a button in the center of the div. (n.d.). Educative.io. Retrieved March 14, 2023, from https://www.educative.io/answers/how-to-align-a-button-in-the-center-of-the-div
 - Tutoring 14MAR2023
+- How to create a countdown timer using JavaScript. (n.d.). Educative.io. Retrieved March 14, 2023, from https://www.educative.io/answers/how-to-create-a-countdown-timer-using-javascript
+- 10 Minute Countdown Clock. (n.d.). CodePen. Retrieved March 14, 2023, from https://codepen.io/yaphi1/pen/KpbRZL
