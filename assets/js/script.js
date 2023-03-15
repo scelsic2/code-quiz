@@ -14,10 +14,17 @@ var buttonB = document.querySelector("#choiceB");
 var buttonC = document.querySelector("#choiceC");
 var buttonD = document.querySelector("#choiceD");
 var anyButton = document.querySelectorAll(".mx-button-default");
+var timer = document.querySelector(".timer-p");
 
 // values
 var questionIndex = 0;
 var q = questionBankArray[questionIndex];
+
+// How to create a countdown timer using JavaScript. (n.d.). Educative.io. Retrieved March 14, 2023, from https://www.educative.io/answers/how-to-create-a-countdown-timer-using-javascript
+// timer
+var timeInMinutes = 10;
+var currentTime = Date.parse(new Date());
+var deadline = new Date (currentTime + timeInMinutes*60*1000);
 
 // display the first question
 function displayQuestion (){
@@ -42,9 +49,45 @@ function nextQuestion(){
     }
 }
 
+// anyButton is an array because it came from querySelectAll,
+// so I have to reference an index in a for loop 
+// or addEventListener won't work
 for(i = 0; i < anyButton.length; i++) {
  anyButton[i].addEventListener("click", nextQuestion);
 }
+
+// 10 Minute Countdown Clock. (n.d.). CodePen. Retrieved March 14, 2023, from https://codepen.io/yaphi1/pen/KpbRZL
+//Timer
+function timeRemaining(endTime){
+    var t = Date.parse(endTime) - Date.parse(new Date());
+    var seconds = Math.floor( (t/1000) % 60);
+    var minutes = math.floor( (t/1000/60) % 60);
+    return {total: t, min: minutes, sec: seconds};
+}
+
+function runTimer (id, endTime) {
+    function updateTimer (){
+        var t = timeRemaining(endTime);
+        timer.textContent = t.min + ":" + t.sec;
+        if (t.total<=0) {clearInterval(timeInterval); }
+    }
+    updateTimer();
+    var timeInterval = setInterval(updateTimer, 1000);
+}
+
+// function quizTimer (){
+//     var setIntervalVariable = setInterval(function () {
+//         count--;
+//         timer.textContent = "Timer " + count;
+//         if (count === 0){
+//         clearInterval(setIntervalVariable); 
+//         }
+//     }, 1000);
+    
+//     setTimeout(function(){
+//         console.log("now run this");
+//     }, 3000);
+// }
 
 // --------------------FIRST ATTEMPT--------------------
 // HTML | DOM Style display Property. (2022, June 5). GeeksforGeeks. Retrieved March 13, 2023, from https://www.geeksforgeeks.org/html-dom-style-display-property/

@@ -5,7 +5,7 @@ var questionBankArray = [
     ],
     correctIndex: 1},
 
-    {question: "In the Terminal, what key do you press to autocomplete?",
+    {question: "In the Terminal, what key(s) do you press to autocomplete?",
     choices: [
         "tab", "shift + tab", "up, up, down, down, left, right, left, right, B, A", "backtick"
     ],
