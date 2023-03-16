@@ -1,4 +1,8 @@
 /* CSS Variables - The var() function. (n.d.). W3Schools. Retrieved March 13, 2023, from https://www.w3schools.com/css/css3_variables.asp */
+/* HTML Global class Attribute. (n.d.). W3Schools. Retrieved March 14, 2023, from https://www.w3schools.com/tags/att_global_class.asp */
+/* Coyier, C. (2013, April 8). A Complete Guide to Flexbox | CSS-Tricks. CSS-Tricks. Retrieved March 14, 2023, from https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+/* How to align a button in the center of the div. (n.d.). Educative.io. Retrieved March 14, 2023, from https://www.educative.io/answers/how-to-align-a-button-in-the-center-of-the-div */
+
 :root {
     --flat-color: #126A6E;
     --accent-color: #16848A;
@@ -21,7 +25,7 @@ body {
 section {
     display: flex;
 }
-/* Coyier, C. (2013, April 8). A Complete Guide to Flexbox | CSS-Tricks. CSS-Tricks. Retrieved March 14, 2023, from https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
 header {
     margin-bottom: 50px;
     display: flex;
@@ -30,10 +34,6 @@ header {
     background-color: var(--fill-in-color);
 }
 
-/* HTML Global class Attribute. (n.d.). W3Schools. Retrieved March 14, 2023, from https://www.w3schools.com/tags/att_global_class.asp */
-/* .function, h1, p{
-    color: black;
-} */
 
 .button-div {
     display: flex;
@@ -41,6 +41,47 @@ header {
     width: fit-content;
     flex-direction: column;
     border: var(--accent-color) solid 10px;
+    margin: auto;
+    padding: 30px 40px;
+    background-color: var(--fill-in-color);
+    border-radius: 20px;
+}
+
+/* quiz.html */
+.question-choice-answer-container {
+    width: 50%;
+    height:fit-content;
+    max-width: 500px;
+    background-color: var(--fill-in-color);
+    margin: auto;
+    padding: 15px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    border: var(--accent-color) solid 10px;
+}
+
+.question-div {
+    margin: 10px;
+    margin-bottom: 30px;
+    font-size:x-large;
+    font-weight: bolder;
+}
+
+h3 {
+    padding: 15px 10px 10px 0px;
+    text-align: center;
+}
+
+.mxChoice-div {
+    text-align: center;
+}
+
+.choices-class {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    flex-direction: column;
     margin: auto;
     padding: 30px 40px;
     background-color: var(--fill-in-color);
@@ -57,36 +98,12 @@ header {
     width: 200px;
     text-align: center;
     border-radius: 10px;
+    font-size: medium;
 }
 
 .btn:hover, .mx-button-default:hover {
     background-color: var(--details-accent-color);
     border: var(--accent-color) inset 8px;;
-}
-
-/* quiz.html */
-.question-choice-answer-container {
-    width: 50%;
-    height:fit-content;
-    max-width: 500px;
-    background-color: var(--fill-in-color);
-    margin: auto;
-    padding: 15px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.question-div {
-    margin: 10px;
-    margin-bottom: 30px;
-    font-size:x-large;
-    font-weight: bolder;
-}
-
-/* How to align a button in the center of the div. (n.d.). Educative.io. Retrieved March 14, 2023, from https://www.educative.io/answers/how-to-align-a-button-in-the-center-of-the-div */
-.mxChoice-div {
-    text-align: center;
 }
 
 .mx-button-default {
@@ -102,6 +119,3 @@ header {
     font-size: large;
     display: block;
 }
-
-
-

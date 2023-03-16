@@ -1,3 +1,12 @@
+
+var cars = [
+    {make: "Ford",
+    models: ["Ranger", "Bronco", "F-150"]},
+
+    {make: "Chevy",
+    models: ["Silverado", "Trailblazer", "S-10"]}
+];
+
 var questionBankArray = [
     {question: "In the Terminal, what do you type to move into a different directory?", 
     choices: [
