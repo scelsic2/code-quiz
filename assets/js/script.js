@@ -1,59 +1,42 @@
-// What do I want to grab?
+// -----What do I want to grab?-----
 
 // index.html
-var timer = document.querySelector(".timer-div");
 var startButton = document.querySelector("#quiz-button");
 var highScoresButton = document.querySelector("#scores-button");
-var questionContainer = document.querySelector(
-  ".question-choice-answer-container"
-);
+var questionContainer = document.querySelector(".question-choice-answer-container");
 var showAnswerResponse = document.querySelector(".show-answer-response");
 
 // quiz.html
 var timer = document.querySelector(".timer-p");
 
-// values
+// -----TIMER CODE-----
+// tutoring 
+// milliseconds * seconds * minutes = total timer length
+// counterHandle holds the timer I made, then I have to use the setInterval
+// function and that requires that I pass 2 arguments, which are the
+// function that makes my timer go and how much space between the time that I
+// want it to run (ie., 1 millisecond)
 
-// How to create a countdown timer using JavaScript. (n.d.). Educative.io. Retrieved March 14, 2023, from https://www.educative.io/answers/how-to-create-a-countdown-timer-using-javascript
-// timer
-var timeInMinutes = 10;
-var currentTime = Date.parse(new Date());
-var deadline = new Date(currentTime + timeInMinutes * 60 * 1000);
+var counter = 4000;
 
-// 10 Minute Countdown Clock. (n.d.). CodePen. Retrieved March 14, 2023, from https://codepen.io/yaphi1/pen/KpbRZL
-//Timer
-function timeRemaining(endTime) {
-  var t = Date.parse(endTime) - Date.parse(new Date());
-  var seconds = Math.floor((t / 1000) % 60);
-  var minutes = math.floor((t / 1000 / 60) % 60);
-  return { total: t, min: minutes, sec: seconds };
-}
-
-function runTimer(id, endTime) {
-  function updateTimer() {
-    var t = timeRemaining(endTime);
-    timer.textContent = t.min + ":" + t.sec;
-    if (t.total <= 0) {
-      clearInterval(timeInterval);
-    }
+function timerFunction(){
+  timer.innerHTML = "Beat the clock " + counter + "!";
+  counter--;
+  if(counter == 0) {
+    timer.innerHTML = "Time is up!";
+    clearInterval(counterHandle);
   }
-  updateTimer();
-  var timeInterval = setInterval(updateTimer, 1000);
+};
+
+
+// -----DECREMENT TIME FOR A WRONG ANSWER-----
+var counterHandle = setInterval(timerFunction, 1000);
+
+var incorrectAnswerDeduction = 1000 * 10; //milliseconds * seconds
+function incorrectAnswer() {
+  counter = counter - incorrectAnswer;
 }
 
-// function quizTimer (){
-//     var setIntervalVariable = setInterval(function () {
-//         count--;
-//         timer.textContent = "Timer " + count;
-//         if (count === 0){
-//         clearInterval(setIntervalVariable);
-//         }
-//     }, 1000);
-
-//     setTimeout(function(){
-//         console.log("now run this");
-//     }, 3000);
-// }
 
 // office hours 15MAR2023
 // https://jsbin.com/boqanit/edit?html,js,output
@@ -79,43 +62,55 @@ function checkAnswer() {
 
 // looping through object item in my array
 //help from learning assistant 15MAR2023:
-var cars = [
-  { make: "Ford", models: ["Ranger", "Bronco", "F-150"] },
+// var cars = [
+//   { make: "Ford", models: ["Ranger", "Bronco", "F-150"] },
 
-  { make: "Chevy", models: ["Silverado", "Trailblazer", "S-10"] },
-];
+//   { make: "Chevy", models: ["Silverado", "Trailblazer", "S-10"] },
+// ];
 
-for (let i = 0; i < cars.length; i++) {
-  console.log("-------", cars[i].make, "------");
-  for (let j = 0; j < cars[i].models.length; j++) {
-    console.log(cars[i].models[j]);
-  }
-}
+// for (let i = 0; i < cars.length; i++) {
+//   console.log("-------", cars[i].make, "------");
+//   for (let j = 0; j < cars[i].models.length; j++) {
+//     console.log(cars[i].models[j]);
+//   }
+// }
+
+// for (let i = 0; i < cars.length; i++) {
+//   var car = cars[i];
+//   console.log("-------", car.make, "------");
+//   for (let j = 0; j < car.models.length; j++) {
+//     console.log(car.models[j]);
+//   }
+// }
 
 // innerHTML lets you write html as a string, so I still need to do opening and closing tags
 // I can't just refer to it like a selector
-function displayQuestion() {
-  questionContainer.innerHTML = "<h3>" + questionBankArray.question + "</h3>";
-
+function displayQuestion(displayQuestionAtIndex) {
+  questionContainer.innerHTML = "<h3>" + questionBankArray[displayQuestionAtIndex].question + "</h3>";
+  
   var mxChoicesDiv = document.createElement("div");
-  mxChoicesDiv.classList.add = "choices-class";
+  mxChoicesDiv.classList.add("choices-class");
 
-  for (i = 0; i < questionBankArray.length; i++) {
-    console.log("-----", questionBankArray[i].choices, "-----");
-    for (j = 0; j < questionBankArray[i].choices.length; j++) {
-      console.log(questionBankArray[i].choices[j]);
+  //for (i = 0; i < questionBankArray.length; i++) {
+    //console.log("-----", questionBankArray[i].choices, "-----");
+    for (i = 0; i < questionBankArray[displayQuestionAtIndex].choices.length; i++) {
+      console.log('choice ' + questionBankArray[displayQuestionAtIndex].choices[i]);
 
-      var choice = questionBankArray[i].choices[j];
+      var choice = questionBankArray[displayQuestionAtIndex].choices[i];
       var answerButton = document.createElement("button");
 
-      answerButton.textContent = choice[j];
-      answerButton.dataset.index = j;
-      answerButton.classList.add = "btn";
+      answerButton.textContent = choice;
+      answerButton.dataset.index = i;
+      answerButton.classList.add("btn");
       answerButton.addEventListener("click", checkAnswer);
+      mxChoicesDiv.append(answerButton);
     }
-  }
+  //}
   questionContainer.append(mxChoicesDiv);
 }
+
+displayQuestion(0);
+
 // var choice = questionBankArray.choices[i];
 // var answerButton = document.createElement("button");
 
@@ -133,10 +128,58 @@ function displayQuestion() {
 // above I created a for loop to create a button for each choice.
 // then I left that for loop function and placed the result to append to another div
 // calling the function
-displayQuestion();
+
 
 // Check if the index of the button that was clicked matches the index
 // of the correct answer(correctIndex)
+
+// --------------------THIRD ATTEMPT--------------------
+// How to create a countdown timer using JavaScript. (n.d.). Educative.io. Retrieved March 14, 2023, from https://www.educative.io/answers/how-to-create-a-countdown-timer-using-javascript
+// timer
+// var timeInMinutes = 10;
+// var currentTime = Date.parse(new Date());
+// var deadline = new Date(currentTime + timeInMinutes * 60 * 1000);
+
+// // 10 Minute Countdown Clock. (n.d.). CodePen. Retrieved March 14, 2023, from https://codepen.io/yaphi1/pen/KpbRZL
+// //Timer
+// function timeRemaining(endTime) {
+//   var t = Date.parse(endTime) - Date.parse(new Date());
+//   var seconds = Math.floor((t / 1000) % 60);
+//   var minutes = math.floor((t / 1000 / 60) % 60);
+//   return { total: t, min: minutes, sec: seconds };
+// }
+
+// function runTimer(id, endTime) {
+//   function updateTimer() {
+//     var t = timeRemaining(endTime);
+//     timer.textContent = t.min + ":" + t.sec;
+//     if (t.total <= 0) {
+//       clearInterval(timeInterval);
+//     };
+//     id.append
+//   }
+//   updateTimer(timer, 10);
+//   var timeInterval = setInterval(updateTimer, 1000);
+// }
+
+//end timer code
+
+// values
+
+// function quizTimer (){
+//     var setIntervalVariable = setInterval(function () {
+//         count--;
+//         timer.textContent = "Timer " + count;
+//         if (count === 0){
+//         clearInterval(setIntervalVariable);
+//         }
+//     }, 1000);
+
+//     setTimeout(function(){
+//         console.log("now run this");
+//     }, 3000);
+// }
+
 
 // --------------------SECOND ATTEMPT-------------------
 // I can create elements in js - office hours 15MAR2023
