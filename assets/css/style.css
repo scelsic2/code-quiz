@@ -34,7 +34,7 @@ header {
     background-color: var(--fill-in-color);
 }
 
-
+/* index.html */
 .button-div {
     display: flex;
     justify-content: center;
@@ -47,8 +47,13 @@ header {
     border-radius: 20px;
 }
 
+.hide-me {
+    display: none !important;
+}
+
 /* quiz.html */
-.question-choice-answer-container {
+.question-choice-answer-container, 
+    .score-page-container {
     width: 50%;
     height:fit-content;
     max-width: 500px;
@@ -95,7 +100,7 @@ h3 {
     font-weight: bold;
     border: var(--details-accent-color) outset 8px;
     margin: 10px auto;
-    width: 200px;
+    width: 300px;
     text-align: center;
     border-radius: 10px;
     font-size: medium;
@@ -118,4 +123,18 @@ h3 {
     border-radius: 10px;
     font-size: large;
     display: block;
+}
+
+.show-answer-response {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+label {
+    font-weight: bold;
+}
+
+#initials{
+
 }

@@ -1,5 +1,28 @@
-# code-quiz
-A multiple choice code assessment
+# function codeQuiz(){
+
+## Description
+
+This code quiz allows you to test your coding knowledge!  But be careful, if you miss a question, your time will be docked!
+
+In creating this app, I learned about nested functions, event listeners, and local storage.
+
+## Installation
+
+N/A
+
+## Usage
+
+Click the start button to begin!
+![screenshot of the start screen](./assets/images/screenshot1.png)
+
+Select your answer.  But be careful - time is running out!
+![screenshot of the first question and possible choices](./assets/images/screenshot2.png)
+
+See your score and enter your initials.
+![screenshot of the page with the user's score and where the user can enter their initials](./assets/images/screenshot3.png)
+
+Save your scores to your local storage.
+![screenshot of scores saved in local storage](./assets/images/screenshot4.png)
 
 ## Credits
 - HTML input type="text". (n.d.). W3Schools. Retrieved March 13, 2023, from https://www.w3schools.com/tags/att_input_type_text.asp
@@ -23,3 +46,12 @@ A multiple choice code assessment
 - How to create a countdown timer using JavaScript. (n.d.). Educative.io. Retrieved March 14, 2023, from https://www.educative.io/answers/how-to-create-a-countdown-timer-using-javascript
 - 10 Minute Countdown Clock. (n.d.). CodePen. Retrieved March 14, 2023, from https://codepen.io/yaphi1/pen/KpbRZL
 - Office hours 15MAR2023: https://jsbin.com/boqanit/edit?html,js,output 
+- Tutoring 16MAR2023: saving to local storage
+
+## License
+
+MIT License
+
+## Deployed Application Link
+
+Paste your deployed application link here.

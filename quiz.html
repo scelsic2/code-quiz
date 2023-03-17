@@ -28,7 +28,7 @@
     </header>
 
     <!-- I can create these elements in js: office hours 15MAR2023 -->
-    <div class="question-choice-answer-container hide-choice-answer-container">
+    <div class="question-choice-answer-container">
         <!-- <div class="question-div">
         </div>
 
@@ -40,12 +40,41 @@
         </div> -->
 
     </div>
+    <div class="show-answer-response-div">
+        <p class="show-answer-response"></p>
+    </div>
+    
 
-    <p class="show-answer-response">
-        
-    </p>
+    <section class="score-page-container hide-me">
+        <div class="finished-div-text">
+            <h2>
+
+            </h2>
+        </div>
+
+        <div class="score-initials-container">
+            <div class="score-div">
+                <p class="final-score-output"></p>
+                
+            </div>
+            <!-- HTML input type="text". (n.d.). W3Schools. Retrieved March 13, 2023, from https://www.w3schools.com/tags/att_input_type_text.asp -->
+            <!-- HTML button tag. (n.d.). W3Schools. Retrieved March 13, 2023, from https://www.w3schools.com/tags/tag_button.asp -->
+            <div class="initials-div">
+                <label for="initials">Enter your initials</label>
+                <input type="text" id="initials" name="initials">
+                <button type="button" class="btn" id="save-score">Submit</button>
+            </div>
+        </div>
+    </section>
+
+<!-- 
+    <div class="hide-me button-div">
+        <a class="btn" id="scores-button" href="./scores.html">Log Your Score!</a>
+    </div> -->
+
+    
         <script src="./assets/js/data.js"></script>
-        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/quiz.js"></script>
     
     </body>
     </html>
