@@ -3,62 +3,158 @@
 // index.html
 var startButton = document.querySelector("#quiz-button");
 var highScoresButton = document.querySelector("#scores-button");
-var questionContainer = document.querySelector(".question-choice-answer-container");
-var showAnswerResponse = document.querySelector(".show-answer-response");
-
-// quiz.html
-var timer = document.querySelector(".timer-p");
-
-// -----TIMER CODE-----
-// tutoring 
-// milliseconds * seconds * minutes = total timer length
-// counterHandle holds the timer I made, then I have to use the setInterval
-// function and that requires that I pass 2 arguments, which are the
-// function that makes my timer go and how much space between the time that I
-// want it to run (ie., 1 millisecond)
-
-var counter = 4000;
-
-function timerFunction(){
-  timer.innerHTML = "Beat the clock " + counter + "!";
-  counter--;
-  if(counter == 0) {
-    timer.innerHTML = "Time is up!";
-    clearInterval(counterHandle);
-  }
-};
 
 
-// -----DECREMENT TIME FOR A WRONG ANSWER-----
-var counterHandle = setInterval(timerFunction, 1000);
+// // quiz.html
+// var questionContainer = document.querySelector(".question-choice-answer-container");
+// var showAnswerResponse = document.querySelector(".show-answer-response");
+// var showAnswerResponseDiv = document.querySelector(".show-answer-response-div")
+// var targetHideMe = document.querySelector(".hide-me");
+// var timer = document.querySelector(".timer-p");
+// var startingIndex = 0;
+// var correctAnswers = 0;
+// var incorrectAnswers = 0;
 
-var incorrectAnswerDeduction = 1000 * 10; //milliseconds * seconds
-function incorrectAnswer() {
-  counter = counter - incorrectAnswer;
-}
+// // -----TIMER CODE-----
+// // tutoring 
+// // counterHandle holds the timer I made, then I have to use the setInterval
+// // function and that requires that I pass 2 arguments, which are the
+// // function that makes my timer go and how much space between the time that I
+// // want it to run (ie., 1 millisecond)
+
+// var counter = 1000;
+
+// function timerFunction(){
+//   timer.innerHTML = "Beat the clock " + counter + "!";
+//   counter--;
+//   if(counter <= 0) {
+//     timer.innerHTML = "Time is up!";
+//     clearInterval(counterHandle);
+//     quizFinished();
+//   }
+// };
+
+// // -----DECREMENT TIME FOR A WRONG ANSWER-----
+// var counterHandle = setInterval(timerFunction, 1000);
+
+// var incorrectAnswerDeduction = 200; 
+// function incorrectAnswer() {
+//   counter = counter - incorrectAnswerDeduction;
+//   // I have to recall the timer function here so that I don't have to wait a full
+//   // second for it to show the decrement
+//   timer.innerHTML = "Beat the clock " + counter + "!";
+
+// }
+
+// // office hours 15MAR2023
+// // https://jsbin.com/boqanit/edit?html,js,output
+
+// // -----SHOW MY FIRST QUESTION-----
+// // innerHTML lets you write html as a string, so I still need to do opening and closing tags
+// // I can't just refer to it like a selector
+// function displayQuestion(displayQuestionAtIndex) {
+//   questionContainer.innerHTML = "<h3>" + questionBankArray[displayQuestionAtIndex].question + "</h3>";
+  
+//   var mxChoicesDiv = document.createElement("div");
+//   mxChoicesDiv.classList.add("choices-class");
+
+//   //for (i = 0; i < questionBankArray.length; i++) {
+//     //console.log("-----", questionBankArray[i].choices, "-----");
+//     for (i = 0; i < questionBankArray[displayQuestionAtIndex].choices.length; i++) {
+//       // console.log('choice ' + questionBankArray[displayQuestionAtIndex].choices[i]);
+
+//       var choice = questionBankArray[displayQuestionAtIndex].choices[i];
+//       var answerButton = document.createElement("button");
+
+//       answerButton.textContent = choice;
+//       answerButton.dataset.index = i;
+//       answerButton.classList.add("btn");
+//       answerButton.addEventListener("click", checkAnswer);
+//       mxChoicesDiv.append(answerButton);
+//       //answerButton.addEventListener("click", nextQuestion);
+      
+//     }
+//     questionContainer.append(mxChoicesDiv);
+//     console.log(displayQuestionAtIndex);
+//     return displayQuestionAtIndex;
+// }
+
+// // I want to return a value from displayQuestion, so i have to return the value I want
+// // when I return the value, I can capture it in a variable outside of the function,
+// // But i need to set the NAME OF THE FUNCTION + ARGUMENT to the variable,
+// // NOT the stuff after the word "return"
 
 
-// office hours 15MAR2023
-// https://jsbin.com/boqanit/edit?html,js,output
+// function checkAnswer() {
+//   // because checkAnswer gets passed into displayFunction, I can refer to it as "this".
+//   // and it will go right back to the dataset that I already set on the button in displayQuestion
+//   // now i need to see if the correctIndex from my questionBankArray matches the "index" I placed
+//   // as a dataset on each button, starting from 0 and incrementing
+//   var setAnIndexValueToAButton = this.dataset.index;
+//   console.log(setAnIndexValueToAButton);
+//   //not all, change j to the currently displayed question index, i don't need a for loop here
+//   //for(j = 0; j < questionBankArray.length; j++) {
+//     if (setAnIndexValueToAButton == questionBankArray[startingIndex].correctIndex){
+//       console.log(questionBankArray[startingIndex].correctIndex);
+//       showAnswerResponse.innerHTML = "Correct!";
+//       correctAnswers++;
+//     } else {
+//       incorrectAnswer();
+//       showAnswerResponse.innerHTML = "Incorrect";
+//       incorrectAnswers++;
+//     }
+//   //}
+//   startingIndex++;
+//     if (startingIndex == questionBankArray.length){
+//       quizFinished();
+//     }
+//     else {
+//       nextQuestion();
+//     }
+// }
 
-function checkAnswer() {
-  // because checkAnswer gets passed into displayFunction, I can refer to it as this.
-  // and it will go right back to the dataset that I already set on the button in displayQuestion
-  var setAnIndexValueToAButton = this.dataset.index;
+// function quizFinished() {
+//   questionContainer.innerHTML = " ";
+//   mxChoicesDiv.innerHTML = " ";
+//   questionContainer.classList.add("hide-me")
+//   showAnswerResponseDiv.innerHTML = " ";
+//   targetHideMe.classList.remove("hide-me");
+//   localStorage.setItem(correctAnswers, incorrectAnswers);
+// };
 
-  // now i need to see if the correctIndex from my questionBankArray matches the "index" I placed
-  // as a dataset on each button, starting from 0 and incrementing
+// function nextQuestion () {
+//   questionContainer.innerHTML = " ";
+//   mxChoicesDiv = " ";
+//   displayQuestion(startingIndex);
+// }
 
-  if (setAnIndexValueToAButton == questionBankArray.correctIndex) {
-    console.log("Correct");
-    showAnswerResponse.classList.add("show");
-    setTimeout(function () {
-      showAnswerResponse.classList.remove("show");
-    }, 6000);
-  } else {
-    console.log("Incorrect");
-  }
-}
+// nextQuestion ();
+  
+// // -----LOCAL STORAGE-----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------------THIRD ATTEMPT--------------------
+// if (setAnIndexValueToAButton == questionBankArray.correctIndex) {
+  //   console.log("Correct");
+  //   showAnswerResponse.classList.add("show");
+  //   setTimeout(function () {
+  //     showAnswerResponse.classList.remove("show");
+  //   }, 6000);
+  // } else {
+  //   console.log("Incorrect");
+  // }
 
 // looping through object item in my array
 //help from learning assistant 15MAR2023:
@@ -83,34 +179,6 @@ function checkAnswer() {
 //   }
 // }
 
-// innerHTML lets you write html as a string, so I still need to do opening and closing tags
-// I can't just refer to it like a selector
-function displayQuestion(displayQuestionAtIndex) {
-  questionContainer.innerHTML = "<h3>" + questionBankArray[displayQuestionAtIndex].question + "</h3>";
-  
-  var mxChoicesDiv = document.createElement("div");
-  mxChoicesDiv.classList.add("choices-class");
-
-  //for (i = 0; i < questionBankArray.length; i++) {
-    //console.log("-----", questionBankArray[i].choices, "-----");
-    for (i = 0; i < questionBankArray[displayQuestionAtIndex].choices.length; i++) {
-      console.log('choice ' + questionBankArray[displayQuestionAtIndex].choices[i]);
-
-      var choice = questionBankArray[displayQuestionAtIndex].choices[i];
-      var answerButton = document.createElement("button");
-
-      answerButton.textContent = choice;
-      answerButton.dataset.index = i;
-      answerButton.classList.add("btn");
-      answerButton.addEventListener("click", checkAnswer);
-      mxChoicesDiv.append(answerButton);
-    }
-  //}
-  questionContainer.append(mxChoicesDiv);
-}
-
-displayQuestion(0);
-
 // var choice = questionBankArray.choices[i];
 // var answerButton = document.createElement("button");
 
@@ -133,7 +201,6 @@ displayQuestion(0);
 // Check if the index of the button that was clicked matches the index
 // of the correct answer(correctIndex)
 
-// --------------------THIRD ATTEMPT--------------------
 // How to create a countdown timer using JavaScript. (n.d.). Educative.io. Retrieved March 14, 2023, from https://www.educative.io/answers/how-to-create-a-countdown-timer-using-javascript
 // timer
 // var timeInMinutes = 10;
