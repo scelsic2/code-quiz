@@ -4,22 +4,27 @@
 /* How to align a button in the center of the div. (n.d.). Educative.io. Retrieved March 14, 2023, from https://www.educative.io/answers/how-to-align-a-button-in-the-center-of-the-div */
 
 :root {
-    --flat-color: #126A6E;
+    --header-color: #16357D;
+    --flat-color: #1E46A6;
+    --accent-color: #DE28B8;
+    --details-accent-color: #C223A1;
+    --fill-in-color: #285DDE;
+    /* --flat-color: #126A6E;
     --accent-color: #16848A;
     --details-accent-color: #1A9EA6;
-    --fill-in-color: #1FB9C1;
+    --fill-in-color: #1FB9C1; */
 }
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0; 
-    color: rgb(31, 36, 43);
+    color: #ECEFF4;
 }
 
 body {
     background-color: var(--flat-color);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 section {
@@ -31,7 +36,7 @@ header {
     display: flex;
     justify-content: space-around;
     padding: 30px;
-    background-color: var(--fill-in-color);
+    background-color: var(--header-color);
 }
 
 /* index.html */
@@ -40,7 +45,7 @@ header {
     justify-content: center;
     width: fit-content;
     flex-direction: column;
-    border: var(--accent-color) solid 10px;
+    border: var(--accent-color) solid 5px;
     margin: auto;
     padding: 30px 40px;
     background-color: var(--fill-in-color);
@@ -63,7 +68,13 @@ header {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    border: var(--accent-color) solid 10px;
+    border: var(--accent-color) solid 5px;
+}
+
+.final-score-output {
+    padding: 20px;
+    font-weight: bold;
+    font-size: large;
 }
 
 .question-div {
@@ -129,12 +140,54 @@ h3 {
     text-align: center;
     margin-top: 20px;
     font-weight: bold;
+    border: var(--accent-color) solid 5px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px 30px;
+    background-color: var(--fill-in-color);
+    border-radius: 20px;
+    width: 50%;
+    max-width: 500px;
 }
 
 label {
     font-weight: bold;
 }
 
-#initials{
+.initials-div{
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+}
 
+#initials {
+    padding: 3px;
+    color: black;
+}
+
+#high-scores-btn {
+    margin: auto;
+    /* margin-top: 30px; */
+    text-align: center;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    /* border: var(--accent-color) solid 1px; */
+    border-radius: 10px;
+    margin: 10px;
+    background-color: var(--flat-color)
+}
+
+h3 {
+    margin-bottom: 30px;
+}
+
+.score-page-container {
+    width: fit-content
 }
