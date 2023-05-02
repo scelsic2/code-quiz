@@ -4,9 +4,9 @@ var showAnswerResponse = document.querySelector(".show-answer-response");
 var showAnswerResponseDiv = document.querySelector(".show-answer-response-div");
 var enterInitialsContainer = document.querySelector(".score-page-container");
 var finalScoreOutputContainer = document.querySelector(".final-score-output");
-
 var initialsTextBox = document.querySelector("#initials");
 var saveScoreButton = document.querySelector("#save-score");
+var highScoresDiv = document.querySelector('.high-scores-div')
 
 
 saveScoreButton.addEventListener("click", saveScore);
@@ -26,10 +26,12 @@ var incorrectAnswers = 0;
 // function that makes my timer go and how much space between the time that I
 // want it to run (ie., 1 millisecond)
 
-var counter = 1000;
+var counter = 600;
 
 function timerFunction(){
-  timer.innerHTML = "Beat the clock " + counter + "!";
+  var minutes = Math.floor(counter / 60);
+  var seconds = counter % 60;
+  timer.innerHTML = "Beat the clock " + minutes + ":" + seconds + "!";
   counter--;
   if(counter <= 0) {
     timer.innerHTML = "Time is up!";
@@ -41,12 +43,14 @@ function timerFunction(){
 // -----DECREMENT TIME FOR A WRONG ANSWER-----
 var counterHandle = setInterval(timerFunction, 1000);
 
-var incorrectAnswerDeduction = 200; 
+var incorrectAnswerDeduction = 60; 
 function incorrectAnswer() {
+  var minutes = Math.floor(counter / 60);
+  var seconds = counter % 60;
   counter = counter - incorrectAnswerDeduction;
   // I have to recall the timer function here so that I don't have to wait a full
   // second for it to show the decrement
-  timer.innerHTML = "Beat the clock " + counter + "!";
+  timer.innerHTML = "Beat the clock " + minutes + ":" + seconds + "!";
 
 }
 
@@ -79,7 +83,7 @@ function displayQuestion(displayQuestionAtIndex) {
       
     }
     questionContainer.append(mxChoicesDiv);
-    console.log(displayQuestionAtIndex);
+    console.log("Display Question at Index: " + displayQuestionAtIndex);
     return displayQuestionAtIndex;
 }
 
@@ -95,15 +99,17 @@ function checkAnswer() {
   // now i need to see if the correctIndex from my questionBankArray matches the "index" I placed
   // as a dataset on each button, starting from 0 and incrementing
   var setAnIndexValueToAButton = this.dataset.index;
-  console.log(setAnIndexValueToAButton);
+  console.log("Set an Index Value to a Button " + setAnIndexValueToAButton);
   //not all, change j to the currently displayed question index, i don't need a for loop here
   //for(j = 0; j < questionBankArray.length; j++) {
     if (setAnIndexValueToAButton == questionBankArray[startingIndex].correctIndex){
-      console.log(questionBankArray[startingIndex].correctIndex);
+      // console.log("Question Bank Array Starting at Index " + questionBankArray[startingIndex].correctIndex);
+      targetHideMe.classList.remove("hide-me");
       showAnswerResponse.innerHTML = "Correct!";
       correctAnswers++;
     } else {
       incorrectAnswer();
+      targetHideMe.classList.remove("hide-me");
       showAnswerResponse.innerHTML = "Incorrect";
       incorrectAnswers++;
     }
@@ -143,8 +149,29 @@ function saveScore() {
         savedScoresArray.push({'initials': userInitials, 'correct': correctAnswers, 'incorrect': incorrectAnswers });
         var valuesStr = JSON.stringify(savedScoresArray);
         localStorage.setItem('myScores', valuesStr);
+        document.location.href = '/scores.html'
     }
 };
+
+// function getScores() {
+//   var unparsedScores = localStorage.getItem('myScores');
+//   console.log(unparsedScores);
+//   var storedScores = JSON.parse(unparsedScores) || [];
+//   console.log(storedScores);
+//   return storedScores
+// }
+
+// function displayScores(scores){
+//   // highScoresDiv.innerHTML = "";
+//   for(i = 0; i < scores.length; i++) {
+//     var createScore = document.createElement("p");
+//     var scoreValue = scores[i];
+//     createScore.classList = "score";
+//     createScore.innerHTML = scoreValue;
+//   }
+// }
+
+// displayScores(getScores)
 
 function nextQuestion () {
   questionContainer.innerHTML = " ";

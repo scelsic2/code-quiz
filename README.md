@@ -6,23 +6,25 @@ This code quiz allows you to test your coding knowledge!  But be careful, if you
 
 In creating this app, I learned about nested functions, event listeners, and local storage.
 
-## Installation
-
-N/A
-
 ## Usage
 
 Click the start button to begin!
-![screenshot of the start screen](./assets/images/screenshot1.png)
+![screenshot of the start screen](./assets/images/s1.png)
 
 Select your answer.  But be careful - time is running out!
-![screenshot of the first question and possible choices](./assets/images/screenshot2.png)
+![screenshot of the first question and possible choices](./assets/images/s2.png)
+
+See if your previous answer was correct...
+![screenshot of correct answer](./assets/images/s3.png)
+
+...or incorrect!
+![screenshot of incorrect answer](./assets/images/s4.png)
 
 See your score and enter your initials.
-![screenshot of the page with the user's score and where the user can enter their initials](./assets/images/screenshot3.png)
+![screenshot of the page with the user's score and where the user can enter their initials](./assets/images/s5.png)
 
-Save your scores to your local storage.
-![screenshot of scores saved in local storage](./assets/images/screenshot4.png)
+See the high scores!  Where do you rank?
+![screenshot of scores saved in local storage](./assets/images/s7.png)
 
 ## Credits
 - HTML input type="text". (n.d.). W3Schools. Retrieved March 13, 2023, from https://www.w3schools.com/tags/att_input_type_text.asp
@@ -47,6 +49,9 @@ Save your scores to your local storage.
 - 10 Minute Countdown Clock. (n.d.). CodePen. Retrieved March 14, 2023, from https://codepen.io/yaphi1/pen/KpbRZL
 - Office hours 15MAR2023: https://jsbin.com/boqanit/edit?html,js,output 
 - Tutoring 16MAR2023: saving to local storage
+- https://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page
+- https://stackoverflow.com/questions/38338144/how-can-i-make-a-button-redirect-my-page-to-another-page-using-addeventlistener
+- https://github.com/scelsic2/weather-app/blob/main/assets/js/script.js
 
 ## License
 
