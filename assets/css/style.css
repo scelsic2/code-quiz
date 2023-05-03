@@ -191,3 +191,12 @@ h3 {
 .score-page-container {
     width: fit-content
 }
+
+.save-score {
+    margin: 20px;
+}
+
+.last {
+    border: none;
+    margin-bottom: none;
+}
