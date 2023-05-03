@@ -120,7 +120,7 @@ h3 {
 .btn:hover, .mx-button-default:hover {
     background-color: var(--details-accent-color);
     border: var(--accent-color) inset 8px;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .mx-button-default {
