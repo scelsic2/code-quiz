@@ -196,3 +196,18 @@ h3 {
 .save-score {
     margin: 20px;
 }
+
+@media screen and (max-width: 480px){
+    .button-div {
+        width: 90%;
+    }
+    .question-choice-answer-container {
+        width: 90%;
+    }    
+    .choices-class > button {
+        width: 100%;
+    }
+    .score-page-container {
+        width: 90%;
+    }
+}

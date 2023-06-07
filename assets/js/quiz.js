@@ -149,7 +149,7 @@ function saveScore() {
         savedScoresArray.push({'initials': userInitials, 'correct': correctAnswers, 'incorrect': incorrectAnswers });
         var valuesStr = JSON.stringify(savedScoresArray);
         localStorage.setItem('myScores', valuesStr);
-        document.location.href = '/code-quiz/scores.html'
+        document.location.href = '/scores.html'
     }
 };
 
